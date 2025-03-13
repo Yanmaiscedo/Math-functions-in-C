@@ -5,6 +5,8 @@ double NumeroHarmonico(int *n);
 double calcularS();
 double calcularE(int *N);
 double RaizQuadrada(double *x);
+double Cosseno(double x, int numTermos, double *resultado);
+double Seno(double x);
 
 int main()
 {
@@ -85,4 +87,27 @@ double RaizQuadrada(double *x)
         raiz = proximaRaiz;
     }
     return raiz;
+}
+
+double Cosseno(double x, int numTermos, double *resultado)
+{
+    *resultado = 1.0;
+    double termo = 1.0;
+    for (int i = 1; i <= numTermos; i++)
+    {
+        termo *= (-x * x) / ((2 * i) * (2 * i - 1));
+        *resultado += termo;
+    }
+}
+
+double Seno(double x)
+{
+    double resultado = 0.0;
+    double termo = x;
+    for (int i = 1; i <= 25; i++)
+    {
+        resultado += termo;
+        termo *= -(x * x) / ((2 * i) * (2 * i + 1));
+    }
+    return resultado;
 }
