@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+int Fatorial(int *n);
+double NumeroHarmonico(int *n);
+
 int main()
 {
     printf("===============MENU===============\n");
@@ -14,6 +17,27 @@ int main()
     printf("8- help (ajuda)\n");
     printf("0- Sair\n");
     printf("==================================\n");
-    
+
     return 0;
+}
+
+
+int Fatorial(int *n)
+{
+    int fatorial = 1;
+    for (int i = 1; i <= n; ++i)
+    {
+        fatorial *= i;
+    }
+    return fatorial;
+}
+
+double NumeroHarmonico(int *n)
+{
+    double resultado = 0.0;
+    for (int i = 1; i <= n; i++)
+    {
+        resultado += 1.0 / i;
+    }
+    return resultado;
 }
