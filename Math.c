@@ -2,6 +2,7 @@
 
 int Fatorial(int *n);
 double NumeroHarmonico(int *n);
+double calcularS();
 
 int main()
 {
@@ -40,4 +41,18 @@ double NumeroHarmonico(int *n)
         resultado += 1.0 / i;
     }
     return resultado;
+}
+
+double calcularS()
+{
+    double soma = 0.0;
+    int numerador = 1;
+    int denominador = 1;
+    for (int i = 1; i <= 50; i++)
+    {
+        soma += (double)numerador / denominador;
+        numerador += 2;
+        denominador++;
+    }
+    return soma;
 }
