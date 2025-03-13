@@ -3,6 +3,8 @@
 int Fatorial(int *n);
 double NumeroHarmonico(int *n);
 double calcularS();
+double calcularE(int *N);
+double RaizQuadrada(double *x);
 
 int main()
 {
@@ -55,4 +57,32 @@ double calcularS()
         denominador++;
     }
     return soma;
+}
+
+double calcularE(int *N)
+{
+    double E = 0.0;
+    double fatorial = 1.0;
+    for (int i = 1; i <= N; ++i)
+    {
+        fatorial *= i;
+        E += 1.0 / fatorial;
+    }
+    return E;
+}
+
+double RaizQuadrada(double *x)
+{
+    double raiz = *x;
+    double erro = 0.0001;
+    while (1)
+    {
+        double proximaRaiz = 0.5 * (raiz + (*x) / raiz);
+        if (proximaRaiz - raiz < erro && raiz - proximaRaiz < erro)
+        {
+            break;
+        }
+        raiz = proximaRaiz;
+    }
+    return raiz;
 }
